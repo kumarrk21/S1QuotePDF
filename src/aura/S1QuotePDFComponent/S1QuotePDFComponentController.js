@@ -26,20 +26,19 @@
                     		cmp.set("v.pdfContainer", pdfContainer);
                 			}
                 			else if (status === "INCOMPLETE") {
-                    			console.log("No response from server or client is offline.")
+                                console.log("No response from server or client is offline.")
+                                throw new Error("No response from server or client is offline.");
                 			}
                 			else if (status === "ERROR") {
                     			console.log("Error: " + errorMessage);
-
+                                throw new Error("Error: " + errorMessage);
 			                }
             			}
         		   );
                 }else{
-                	this.throwError("Error get PDF Data " + ret.message);
                 	console.log(ret.message)
                 }
             } else {
-            	this.throwError("Error get PDF Data " + response.getError());
             	console.log(response.getError());
             }
         });
@@ -61,12 +60,11 @@
                 if(ret.success){
                     alert(ret.message);
                 }else{
-                    this.throwError("Error get PDF Data " + ret.message);
                     console.log('Error' , ret.message)
                 }
             } else {
-                this.throwError("Error get PDF Data " + response.getError());
                 console.log('Error', response.getError());
+                throw new Error('Error: ', response.getError());
             }
         });
         $A.enqueueAction(apexMethod);
@@ -100,12 +98,12 @@
                         }
                     }
                 }else{
-                    this.throwError("Error in saving PDF Data " + ret.message);
                     console.log('Error' , ret.message)
+                    throw new Error('Error: ', ret.message);
                 }
             } else {
-                this.throwError("Error get PDF Data " + response.getError());
                 console.log('Error', response.getError());
+                throw new Error('Error: ', response.getError());
             }
         });
         $A.enqueueAction(apexMethod);
