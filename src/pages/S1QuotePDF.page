@@ -15,7 +15,7 @@
             		$Lightning.createComponent("c:S1QuotePDFComponent", 
                 		{
                     		"quoteId" : "{!Quote.id}",
-                    		"templateId" : "0EH1a0000002dGy"
+                    		"templateId" : "0EH1a0000002dGy" //Hardcoded for now; use custom metadata object instead
                 		},
                 		"_quotePDF",
                 		function(cmp) {
