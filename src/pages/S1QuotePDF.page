@@ -1,0 +1,40 @@
+<apex:page  docType="html-5.0" 
+			showHeader="false" 
+			sidebar="false" 
+			standardStylesheets="false" 
+			applyHtmlTag="false" 
+			applyBodyTag="false"
+			standardController="Quote"
+			extensions="S1QuotePDFController" >
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<head>
+			<apex:includeLightning />
+			<script>
+				var quotePDFComp;
+				$Lightning.use("c:S1QuotePDFApp", function() {
+            		$Lightning.createComponent("c:S1QuotePDFComponent", 
+                		{
+                    		"quoteId" : "{!Quote.id}",
+                    		"templateId" : "0EH1a0000002dGy"
+                		},
+                		"_quotePDF",
+                		function(cmp) {
+                    	 quotePDFComp = cmp;
+                	});
+        		});        		
+		    </script>
+		    <style>
+		    	.fullPage{
+		    		width: 100%;
+		    		height: 100vh;
+		    	}
+		    </style>
+		</head>
+
+		<body>
+			<div class="fullPage" id="_quotePDF"/>
+		</body>
+
+		
+	</html>		
+</apex:page>
