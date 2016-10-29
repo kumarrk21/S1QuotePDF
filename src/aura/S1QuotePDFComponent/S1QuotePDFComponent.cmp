@@ -8,10 +8,10 @@
 	<lightning:input type="email" name="emailId" label="Email" placeholder="Enter email ID..." value="{!v.emailId}"/>
 	<lightning:layout horizontalAlign="spread">
 		<lightning:layoutItem padding="around-small">
-			<lightning:button variant="brand" label="Email Quote" iconName="utility:email" iconPosition="left" onclick="{! c.sendEmail }" />	
+			<lightning:button variant="brand" label="Email" iconName="utility:email" iconPosition="left" onclick="{! c.sendEmail }" />	
 		</lightning:layoutItem>
 		<lightning:layoutItem  padding="around-small">
-			<lightning:button variant="brand" label="Save Quote" iconName="utility:check" iconPosition="left" onclick="{! c.saveQuote }" />
+			<lightning:button variant="brand" label="Save" iconName="utility:check" iconPosition="left" onclick="{! c.saveQuote }" />
 		</lightning:layoutItem>
 	</lightning:layout>
 	{!v.pdfContainer}
