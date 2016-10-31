@@ -5,7 +5,6 @@
 		var templateId = cmp.get('v.templateId');
 
 		apexMethod.setParam('quoteId',quoteId);
-        apexMethod.setParam('templateId',templateId);
         apexMethod.setCallback(this, function(response) {
             var state = response.getState();
             if (state == 'SUCCESS') {

@@ -11,7 +11,7 @@
 		<lightning:layoutItem padding="around-small">
 			<lightning:button variant="brand" label="Email" iconName="utility:email" iconPosition="left" onclick="{! c.sendEmail }" />	
 		</lightning:layoutItem>
-		<lightning:layoutItem  padding="around-small">
+		<lightning:layoutItem padding="around-small">
 			<lightning:button variant="brand" label="Save" iconName="utility:check" iconPosition="left" onclick="{! c.saveQuote }" />
 		</lightning:layoutItem>
 	</lightning:layout>

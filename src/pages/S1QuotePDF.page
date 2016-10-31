@@ -1,4 +1,4 @@
-<apex:page  docType="html-5.0" 
+<apex:page docType="html-5.0" 
 			showHeader="false" 
 			sidebar="false" 
 			standardStylesheets="false" 
@@ -14,8 +14,7 @@
 				$Lightning.use("c:S1QuotePDFApp", function() {
             		$Lightning.createComponent("c:S1QuotePDFComponent", 
                 		{
-                    		"quoteId" : "{!Quote.id}",
-                    		"templateId" : "0EH1a0000002dGy" //Hardcoded for now; use custom metadata object instead
+                    		"quoteId" : "{!Quote.id}"
                 		},
                 		"_quotePDF",
                 		function(cmp) {
