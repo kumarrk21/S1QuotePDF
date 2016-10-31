@@ -11,6 +11,8 @@
             if (state == 'SUCCESS') {
             	var ret = JSON.parse(response.getReturnValue());
                 if(ret.success){
+                    var spinner = cmp.find("_spinner");
+                    $A.util.toggleClass(spinner, "slds-hide");
                 	var pdfData = ret.message;
                 	cmp.set('v.pdfData',pdfData);
                 	//Create the PDF viewer component

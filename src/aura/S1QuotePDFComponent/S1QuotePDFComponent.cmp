@@ -5,6 +5,7 @@
 	<aura:attribute name="pdfData" type="String"/>
 	<aura:attribute name="pdfContainer" type="Aura.Component[]"/>
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<lightning:spinner aura:id="_spinner" variant="brand" size="large"/>
 	<lightning:input type="email" name="emailId" label="Email" placeholder="Enter email ID..." value="{!v.emailId}"/>
 	<lightning:layout horizontalAlign="spread">
 		<lightning:layoutItem padding="around-small">
