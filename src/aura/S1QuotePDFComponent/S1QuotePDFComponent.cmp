@@ -1,6 +1,5 @@
 <aura:component access="GLOBAL" controller="S1QuotePDFController">
 	<aura:attribute name="quoteId" type="String" access="GLOBAL"/>
-	<aura:attribute name="templateId" type="String" access="GLOBAL"/>
 	<aura:attribute name="emailId" type="String"/>
 	<aura:attribute name="pdfData" type="String"/>
 	<aura:attribute name="pdfContainer" type="Aura.Component[]"/>

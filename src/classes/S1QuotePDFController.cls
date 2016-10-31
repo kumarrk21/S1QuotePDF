@@ -2,11 +2,16 @@ public with sharing class S1QuotePDFController {
 	public S1QuotePDFController(ApexPages.StandardController sc) {	}
 
 	@AuraEnabled
-	public static String getPDFData(String quoteId, String templateId){
+	public static String getPDFData(String quoteId){
 		returnMessage ret = new returnMessage();
 		ret.success = false;
+		List<S1QuotePDFSettings__mdt> tsList = [SELECT Value__c FROM S1QuotePDFSettings__mdt WHERE 	Label ='Template ID'];
+		S1QuotePDFSettings__mdt ts = new S1QuotePDFSettings__mdt();
+		if(tsList.size()>0){
+			ts = tsList[0];
+		}
 		try{
-			String pdfURL = '/quote/quoteTemplateDataViewer.apexp?id='+quoteId+'&summlid='+templateId;
+			String pdfURL = '/quote/quoteTemplateDataViewer.apexp?id='+quoteId+'&summlid='+ts.Value__c;
 			PageReference pdf = new PageReference(pdfURL);
 			String b64 = EncodingUtil.base64Encode(pdf.getContent());
 			ret.success=true;

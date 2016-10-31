@@ -2,8 +2,7 @@
 	doInit : function(cmp, evt, helper) {
 		var apexMethod = cmp.get('c.getPDFData');
 		var quoteId = cmp.get('v.quoteId');
-		var templateId = cmp.get('v.templateId');
-
+        
 		apexMethod.setParam('quoteId',quoteId);
         apexMethod.setCallback(this, function(response) {
             var state = response.getState();
